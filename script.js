@@ -75,7 +75,7 @@ let issue = [
     labels: [
     { name: "ENHANCEMENT", color: "green" },
     ],
-    icon: "./B13-A5-Github-Issue-Tracker/assets/Open-Status.png"
+    icon: "./B13-A5-Github-Issue-Tracker/assets/Closed- Status .png"
   },
   {
     id : 7,
@@ -223,9 +223,11 @@ function init(){
 
 
 function updateCounts() {
-  const allissue = issue.filter(a =>a.status=== "HIGH");
-  const openBtn = issue.filter(a =>a.status=== "MEDIUM");
-  const closedBtn = issue.filter(a =>a.status=== "LOW");
+  const openIssue = issue.filter(a =>a.status !=="LOW");
+  const closedIssue = issue.filter(a =>a.status=== "LOW");
+  const totalIssue = issue.length;
+
+
   const totalNumber = document.getElementById("totalnumbers");
   const allB = document.getElementById("all")
   const open = document.getElementById("opened");
@@ -238,9 +240,9 @@ function updateCounts() {
 
   if(count){
     let score = 0;
-    if (currentFilter === "all") score = issue.length;
-    else if (currentFilter === "opened") score = openBtn.length;
-    else if (currentFilter === "closed") score = closedBtn.length;
+    if (currentFilter === "all") score = totalIssue;
+    else if (currentFilter === "opened") score = openIssue.length;
+    else if (currentFilter === "closed") score = closedIssue.length;
     count.innerText = score;
   }
   
@@ -255,7 +257,8 @@ function renderJobs (){
 
   const filteredIssue = issue.filter(issue => {
     if  (currentFilter === "all" ) return true;
-    return issue.status=== currentFilter.toUpperCase();
+    if (currentFilter === "opened") return issue.status !=="LOW";
+    if (currentFilter === "closed") return issue.status === "LOW";
   });
 
   if(filteredIssue.length === 0){
@@ -281,7 +284,7 @@ function renderJobs (){
     borderColor="purple";
   } 
 
-  let icon="";
+  let icon=issue.icon;
 
   if (issue.status === "HIGH"){
     icon = "./B13-A5-Github-Issue-Tracker/assets/Open-Status.png";
@@ -322,5 +325,31 @@ function renderJobs (){
     `;
     allCardsSection.appendChild(section);
   });
+}
+
+function toggleStyle(id){
+  const all = document.getElementById("all");
+  const open = document.getElementById("opened");
+  const close = document.getElementById("closed");
+
+
+  if (id==="all") currentFilter ="all";
+  else if ( id === "opened") currentFilter = "opened";
+  else if ( id ==="closed") currentFilter = "closed";
+  
+
+  [all,open,close].forEach(btn =>
+  {
+    btn.classList.remove("bg-black","text-white");
+    btn.classList.add("bg-gray-300","text-gray-500");
+  })
+
+  const selected = document.getElementById(id);
+  selected.classList.remove("bg-gray-300","text-gray-500");
+  selected.classList.add("bg-blue","text-white");
+  
+CSSContainerRule.innerHTML="";
+  renderJobs();
+  updateCounts();
 }
 init();
