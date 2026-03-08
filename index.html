@@ -11,7 +11,7 @@
   <title>Github Issues Tracker</title>
 </head>
 <body class="geist">
-  <section class="border-2 shadow-gray-200 border-gray-300">
+  <section class="border-y-2 shadow-2xl rounded-xs border-gray-300">
     <div class="flex justify-between mt-5 mb-5">
       <nav class="flex ml-15 gap-1">
           <img class=" w-8 h-8" src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
@@ -23,5 +23,56 @@
       </div>
     </div>
   </section>
+
+  <section class="mx-35">
+    <div class="border-2 border-gray-300 rounded-sm shadow-xl mt-10 gap-3">
+      <button class="btn btn-primary w-25 mt-4 mb-4 ml-5" id="all">All</button>
+      <button class="btn btn-primary w-25 mt-4 mb-4 ml-2" id="opened">Open</button>
+      <button class="btn btn-primary w-25 mt-4 mb-4 ml-2" id="closed">Closed</button>
+    </div>
+  </section>
+
+
+  <section class="flex justify-between border-2 border-gray-300 rounded-sm mx-35 mt-5 gap-3 p-2">
+    <div class="flex items-center gap-2">
+      <div>
+      <img class="border-gray-700 bg-gray-300 h-8 w-8 rounded-3xl"src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
+      </div>
+     <div>
+      <h3 class="font-bold"><span id="totalnumbers" class="num">50</span> Issues</h3>
+      <p class="font-light ">Track and manage your project issues</p>
+     </div>
+    </div>
+    <div class="flex gap-3 mt-3 mr-3">
+       <div class="flex gap-2">
+        <img  class="h-3 w-3 mt-1.5"src="./B13-A5-Github-Issue-Tracker/assets/Ellipse 2 (1).png" alt="">Open
+       </div>
+       <div class="flex gap-2">
+        <img class="h-3 w-3 mt-1.5" src="./B13-A5-Github-Issue-Tracker/assets/Ellipse 2.png" alt="">Closed
+       </div>
+    </div>
+  </section>
+
+  <section class="py-10 my-4 mx-35 grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-4 px-5 rounded-2xl shadow-2xl allcard">
+    <!-- <div class=" border-t-5 border-green-600 rounded-lg shadow-2xl ">
+      <div class="flex justify-between">
+        <img class="m-5 h-8 w-8" src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
+        <p class="border-amber-50 m-5 bg-red-200 text-red-600 px-7 py-1 rounded-2xl">HIGH</p>
+      </div>
+      <div>
+        <h2 class="font-bold text-xl px-5">Fix Navigation Menu On Mobile Devices</h2>
+        <p class="text-gray-400 px-5">The navigation menu doesn't collapse <br>properly on mobile devices...</p>
+      </div>
+      <div class="px-5 py-4 border-b-2 border-gray-300">
+        <button class="text-red-600 bg-red-200 border-2 border-red-400 px-3.5 rounded-xl">BUG</button>
+        <button class="text-orange-400 bg-yellow-200 border-2 border-yellow-400 px-3.5 rounded-xl">HELP WANTED</button>
+      </div>
+      <div class="p-5  text-gray-500">
+        <p class="mb-2">#1 by john_doe</p>
+        <p>1/15/2024</p>
+      </div>
+    </div> -->
+  </section>
+  <script src="./script.js"></script>
 </body>
 </html>
