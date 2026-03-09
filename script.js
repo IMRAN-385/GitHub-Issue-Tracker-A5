@@ -3,7 +3,7 @@ let issue = [
     id : 1,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status : "HIGH",
+    Priority : "HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -17,7 +17,7 @@ let issue = [
     id : 2,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"MEDIUM" ,
+    Priority :"MEDIUM" ,
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -30,7 +30,7 @@ let issue = [
     id : 3,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"LOW",
+    Priority :"LOW",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -43,7 +43,7 @@ let issue = [
     id : 4,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -56,7 +56,7 @@ let issue = [
     id :5 ,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -69,7 +69,7 @@ let issue = [
     id :6,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"LOW",
+    Priority :"LOW",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -81,7 +81,7 @@ let issue = [
     id : 7,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"MEDIUM" ,
+    Priority :"MEDIUM" ,
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -94,7 +94,7 @@ let issue = [
     id :8,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -107,7 +107,7 @@ let issue = [
     id :9,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -120,7 +120,7 @@ let issue = [
     id :10,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"MEDIUM",
+    Priority :"MEDIUM",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -133,7 +133,7 @@ let issue = [
     id :11,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"LOW",
+    Priority :"LOW",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -146,7 +146,7 @@ let issue = [
     id :12,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -159,7 +159,7 @@ let issue = [
     id :13,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -172,7 +172,7 @@ let issue = [
     id :14,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"MEDIUM",
+    Priority :"MEDIUM",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -185,7 +185,7 @@ let issue = [
     id :15 ,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"LOW",
+    Priority :"LOW",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -198,7 +198,7 @@ let issue = [
     id :16,
     title : "Fix Navigation Menu On Mobile Devices",
     description : "The navigation menu doesn't collapse properly on mobile devices...",
-    status :"HIGH",
+    Priority :"HIGH",
     assignee :"#1 by john_doe",
     date :"1/15/2024",
     labels: [
@@ -223,8 +223,8 @@ function init(){
 
 
 function updateCounts() {
-  const openIssue = issue.filter(a =>a.status !=="LOW");
-  const closedIssue = issue.filter(a =>a.status=== "LOW");
+  const openIssue = issue.filter(a =>a.Priority !=="LOW");
+  const closedIssue = issue.filter(a =>a.Priority=== "LOW");
   const totalIssue = issue.length;
 
 
@@ -257,8 +257,8 @@ function renderJobs (){
 
   const filteredIssue = issue.filter(issue => {
     if  (currentFilter === "all" ) return true;
-    if (currentFilter === "opened") return issue.status !=="LOW";
-    if (currentFilter === "closed") return issue.status === "LOW";
+    if (currentFilter === "opened") return issue.Priority !=="LOW";
+    if (currentFilter === "closed") return issue.Priority === "LOW";
   });
 
   if(filteredIssue.length === 0){
@@ -271,28 +271,28 @@ function renderJobs (){
       let color ="red";
       let borderColor = "green"
 
-  if(issue.status==="HIGH") {
+  if(issue.Priority==="HIGH") {
     color = "red";
     borderColor = "green";
   }
-  else if (issue.status==="MEDIUM") {
+  else if (issue.Priority==="MEDIUM") {
     color =  "yellow";
     borderColor= "green";
   }
-  else if (issue.status==="LOW"){
+  else if (issue.Priority==="LOW"){
     color ="gray";
     borderColor="purple";
   } 
 
   let icon=issue.icon;
 
-  if (issue.status === "HIGH"){
+  if (issue.Priority === "HIGH"){
     icon = "./B13-A5-Github-Issue-Tracker/assets/Open-Status.png";
   }
-  else if (issue.status === "MEDIUM"){
+  else if (issue.Priority === "MEDIUM"){
     icon = "./B13-A5-Github-Issue-Tracker/assets/Open-Status.png";
   }
-  else if (issue.status === "LOW"){
+  else if (issue.Priority === "LOW"){
     icon = "./B13-A5-Github-Issue-Tracker/assets/Closed- Status .png";
   }
 
@@ -300,11 +300,11 @@ function renderJobs (){
 
     section.className = "mb-10";
     let statusClass = "btn-soft btn-primary";
-    if (issue.status === "OPENED") statusClass = "btn-success text-white";
+    if (issue.Priority === "OPENED") statusClass = "btn-success text-white";
     section.innerHTML =`
-    <div class="w-70  border-t-5 border-${borderColor}-600 rounded-lg shadow-2xl sm:ml-20 lg:m-auto ">
+    <div class="w-70  border-t-5 border-${borderColor}-600 rounded-lg shadow-2xl sm:ml-20 lg:m-auto "  onclick="loadIssueDetail(${issue.id})">
       <div class="flex justify-between mt-4 mr-3 "><img class=" ml-5 h-8 w-8" src="${icon}">
-        <p class="px-6 py-1  rounded-2xl text-${color}-600 bg-${color}-200 border-2  border-${color}-400">${issue.status}</p>
+        <p class="px-6 py-1  rounded-2xl text-${color}-600 bg-${color}-200 border-2  border-${color}-400">${issue.Priority}</p>
 
       </div>
       <div>
@@ -326,6 +326,59 @@ function renderJobs (){
     allCardsSection.appendChild(section);
   });
 }
+
+
+const loadIssueDetail = async(id)=>{
+  const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
+  const res = await  fetch(url);
+  const details= await res.json();
+  displayIssueDetails(details.data);
+}
+const displayIssueDetails = (issue) =>{
+console.log(issue);
+const detailBox= document.getElementById("details-container");
+detailBox.innerHTML=`
+ <div id="details-container">
+      <div>
+        <h2 class="font-bold text-2xl pl-5">${issue.title}</h2>
+      </div>
+      <div class="flex items-center gap-2">
+        <p class="border-amber-50 m-5 text-white pl-5 py-1 bg-green-600 rounded-2xl w-25 ">Opened</p>
+        <ul class="list-disc flex gap-10">
+          <li>
+            Opened by Fahim Ahmed
+          </li>
+          <li>
+            22/02/2026
+
+          </li>
+        </ul>
+      </div>
+      <div class=>
+        <div class="pl-5 gap-2">
+          <button class="text-red-600 bg-red-200  border-red-600  border-2 px-3.5 rounded-xl">${issue.labels}</button>
+        <button class="text-orange-400 bg-yellow-200 border-2 border-yellow-400 px-3.5 rounded-xl ml-2">${issue.labels}</button>
+        </div>
+
+        <p class="text-gray-400 pl-5 my-5">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+      </div >
+      <div class="flex justify-between px-5 py-5 shadow">
+        <div>
+        <p>Assignee :</p>
+        <h3>Fahim Ahmed</h3>
+      </div>
+      <div>
+        <p>
+          Priority:
+        </p>
+        <p class="border-amber-50 text-white bg-red-600 text-center rounded-2xl">${issue.priority}</p>
+      </div>
+      </div>
+    </div>
+`;
+document.getElementById("my_modal_5").showModal ()
+};
+
 
 function toggleStyle(id){
   const all = document.getElementById("all");
