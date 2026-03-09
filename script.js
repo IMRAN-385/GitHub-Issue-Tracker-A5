@@ -305,7 +305,7 @@ function renderJobs (){
     if (issue.Priority === "OPENED") statusClass = "btn-success text-white";
     section.innerHTML =`
     
-    <div class="w-70 h-95 border-t-5 border-${borderColor}-600 rounded-lg shadow-2xl sm:ml-20 lg:m-auto "  onclick="loadIssueDetail(${issue.id})">
+    <div class="w-70 h-95 border-t-5 border-${borderColor}-600 rounded-lg shadow-2xl grid-cols-1 sm:ml-20  lg:m-auto  "  onclick="loadIssueDetail(${issue.id})">
       <div class="flex justify-between mt-4 mr-3 "><img class=" ml-5 h-8 w-8" src="${icon}">
         <p class="px-6 py-1  rounded-2xl text-${color}-600 bg-${color}-200 border-2  border-${color}-400">${issue.Priority}</p>
 
