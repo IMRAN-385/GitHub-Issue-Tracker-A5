@@ -41,21 +41,21 @@
   </section>
 <section id="main-page" class="hidde">
   
-  <section class="border-y-2 shadow-2xl rounded-xs border-gray-300">
-    <div class="flex justify-between mt-5 mb-5 ">
-      <nav class="flex ml-15 gap-1 "id="loginPage">
+  <section class="border-y-2 shadow-2xl rounded-xs border-gray-300  overflow-hidden">
+    <div class="flex justify-between mt-5 mb-5  ">
+      <nav class="flex ml-5 gap-1 lg:ml-15"id="loginPage">
           <img class=" w-8 h-8" src="./B13-A5-Github-Issue-Tracker/assets/github-logo.png" alt="">
         <h2 class="font-semibold text-2xl ">GitHub Issues Tracker</h2>
       </nav>
       <div class="flex gap-2 mr-10 ">
-        <input class="border-gray h-10 w-70 rounded-xl" type="text" placeholder=" Search issues..." name="" id="">
+        <input class="border-gray h-10 w-30 rounded-xl lg:w-70 " type="text" placeholder=" Search issues..." name="" id="">
         <button class="btn btn-primary">+ New Issue</button>
       </div>
     </div>
   </section>
 
-  <section class="mx-35 flex lg:flex">
-    <div class="border-2 border-gray-300 rounded-sm shadow-xl mt-10 gap-3">
+  <section class="ml-30 flex overflow-hidden lg:flex">
+    <div class="border-2 border-gray-300 rounded-sm shadow-xl mt-10 pr-3 gap-3 ">
       <button class="btn btn-primary w-25 mt-4 mb-4 ml-5" id="all" onclick="toggleStyle('all')">All</button>
       <button class="btn btn-primary w-25 mt-4 mb-4 ml-2 bg-gray-300 text-gray-600" id="opened" onclick="toggleStyle('opened')">Open</button>
       <button class="btn btn-primary w-25 mt-4 mb-4 ml-2  bg-gray-300 text-gray-600" id="closed" onclick="toggleStyle('closed')">Closed</button>
@@ -68,12 +68,12 @@
       <div>
       <img class="border-gray-700 bg-gray-300 h-8 w-8 rounded-3xl"src="./B13-A5-Github-Issue-Tracker/assets/Aperture.png" alt="">
       </div>
-     <div>
+     <div >
       <h3 class="font-bold"><span id="totalnumbers" class="num">50</span> Issues</h3>
       <p class="font-light ">Track and manage your project issues</p>
      </div>
     </div>
-    <div class="flex gap-3 mt-3 mr-3">
+    <div class="inline lg:flex gap-3 mt-3 mr-3 ">
        <div class="flex gap-2">
         <img  class="h-3 w-3 mt-1.5"src="./B13-A5-Github-Issue-Tracker/assets/Ellipse 2 (1).png" alt="">Open
        </div>
@@ -83,7 +83,7 @@
     </div>
   </section>
 
-  <section class="py-10 my-4 mx-35 grid grid-cols-1  px-5 rounded-2xl shadow-2xl allcard  sm:grid-cols-1 lg:grid-cols-4 " id="cls" >
+  <section class="py-10 my-4 mx-20 grid grid-cols-1  px-5 rounded-2xl shadow-2xl allcard  sm:grid-cols-1 lg:grid-cols-4 " id="cls" >
     <!-- <div class=" border-t-5 border-green-600 rounded-lg shadow-2xl ">
       <div class="flex justify-between">
         <img class="m-5 h-8 w-8" src="./B13-A5-Github-Issue-Tracker/assets/Open-Status.png" alt="">
