@@ -31,7 +31,7 @@ https://git-hub-issue-tracker-a5.vercel.app/
 | **HTML5**        | Semantic Structure              |
 | **Tailwind CSS** | Modern Styling & Responsiveness |
 | **JavaScript**   | Interactivity & Dynamic Behavior|
-| **Netlify**      | Hosting & Deployment            |
+| **vercel**      | Hosting & Deployment            |
 
 ### Dependencies
 - Tailwind CSS (via CDN)
